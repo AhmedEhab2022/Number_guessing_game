@@ -75,6 +75,8 @@ const restartGame = () => {
 const changeColorIf = () => {
   if (guessLeft.style.color !== "red" && guessCount > maxGuesses - 4) {
     guessLeft.style.color = "red";
+  } else if (guessLeft.style.color === "red" && guessCount <= maxGuesses - 4) {
+    guessLeft.style.color = "black";
   }
 };
 
@@ -130,6 +132,12 @@ saveButton.addEventListener("click", () => {
   maxGuesses = parseInt(noOfguessesSelect.value);
   guessLeft.innerHTML = maxGuesses;
   maxNumber = parseInt(maxNumberOutput.value);
+  saveButton.value = "Saved !";
+  changeColorIf();
+  setTimeout(function () {
+    // Set the value back to the original value
+    saveButton.value = "Save";
+  }, 500); // Delay = 500 milliseconds
 });
 
 // My code before editing by chatgpt
