@@ -1,5 +1,3 @@
-// My code after editing by chatgpt
-
 // Get the necessary elements from the DOM
 const submitButton = document.querySelector(".guessSubmit");
 const userInput = document.querySelector("#guessField");
@@ -23,10 +21,6 @@ let prevGuessesArray = [];
 let win = false;
 
 guessLeft.innerHTML = maxGuesses;
-
-// function enableOrDisable(selector, flag) {
-//   selector.disabled = flag;
-// };
 
 const validateInput = (guessNumber) => {
   if (
@@ -139,83 +133,3 @@ saveButton.addEventListener("click", () => {
     saveButton.value = "Save";
   }, 500); // Delay = 500 milliseconds
 });
-
-// My code before editing by chatgpt
-// const submitButton = document.querySelector(".guessSubmit");
-// const userInput = document.querySelector("#guessField");
-// const statusText = document.querySelector("#statusText");
-// const prevGuesses = document.querySelector(".prevGuesses");
-// const guessLeft = document.querySelector(".remaining");
-
-// const correctNumber = Math.floor(Math.random() * 100) + 1;
-// let msg = "";
-// let guessCount = 0;
-// let prevGuessesArray = [];
-// let win = false;
-// let statusColor = "";
-
-// const endGame = function () {
-//   userInput.disabled = true;
-//   submitButton.disabled = true;
-//   const restartButton = document.createElement("button");
-//   restartButton.textContent = "Start new game";
-//   document.body.append(restartButton);
-//   restartButton.addEventListener("click", () => {
-//     restartGame();
-//   });
-// };
-
-// const restartGame = function () {
-//   guessCount = 0;
-//   prevGuessesArray = [];
-//   statusColor = "";
-//   statusText.innerHTML = "";
-//   prevGuesses.innerHTML = "";
-//   guessLeft.innerHTML = "10";
-//   guessLeft.style.color = "black";
-//   win = false;
-//   userInput.disabled = false;
-//   submitButton.disabled = false;
-//   userInput.value = "";
-//   const restartButton = document.querySelector("button");
-//   restartButton.remove();
-// };
-
-// submitButton.addEventListener("click", () => {
-//   const guessNumber = parseInt(userInput.value);
-//   if (isNaN(guessNumber) || guessNumber < 1 || guessNumber > 100) {
-//     msg = "Please enter a valid number";
-//     statusColor = "red";
-//   } else if (guessNumber === correctNumber) {
-//     msg = "You guessed the correct number!";
-//     statusColor = "green";
-//     win = true;
-//   } else if (guessNumber > correctNumber) {
-//     msg = "You guessed too high!";
-//     userInput.value = "";
-//     statusColor = "#cccc00";
-//     guessCount++;
-//   } else {
-//     msg = "You guessed too low!";
-//     userInput.value = "";
-//     statusColor = "#cccc00";
-//     guessCount++;
-//   }
-//   if (guessCount === 10) {
-//     statusColor = "red";
-//     msg = "Game over! The correct number was " + correctNumber + ".";
-//   }
-//   statusText.style.color = statusColor;
-//   statusText.innerHTML = msg;
-//   if (guessCount > 6) {
-//     guessLeft.style.color = "red";
-//   }
-//   guessLeft.innerHTML = `${10 - guessCount}`;
-//   if (win || guessCount === 10) {
-//     endGame();
-//   }
-//   if (statusColor !== "red") {
-//     prevGuessesArray.push(guessNumber);
-//     prevGuesses.innerHTML = prevGuessesArray.join(", ");
-//   }
-// });
