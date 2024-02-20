@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <title>Number guessing game</title>
+  <head>
+    <link rel="styleSheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <h1>Number guessing game</h1>
+  </head>
+  <body>
+    <h2>Description:</h2>
+    <p class="descriptionParg">
+      We have selected a random number between 1 and 100. See if you can guess
+      it in 10 turns or fewer. We'll tell you if your guess was too high or too
+      low.
+    </p>
+    <p class="descriptionParg">
+      change the settings section if you want to change the default settings.
+    </p>
+    <p class="descriptionParg">
+      <strong>Note: The settings disabled when you click on submit</strong>.
+    </p>
+    <p></p>
+    <hr />
+    <h2>Game:</h2>
+    <div class="game">
+      <div class="form">
+        <label for="guessField">Enter a guess: </label>
+        <input
+          type="number"
+          min="1"
+          max="100"
+          id="guessField"
+          required
+          autofocus
+        />
+        <input type="submit" value="Submit" class="guessSubmit" />
+      </div>
+      <div class="info">
+        <label class="status">Status: <span id="statusText"></span></label>
+        <label class="previousGuesses">
+          Previous guesses: <span class="prevGuesses"></span>
+        </label>
+        <label class="guesses"
+          >Guesses left: <span class="remaining"></span
+        ></label>
+      </div>
+    </div>
+    <hr />
+    <div class="settings">
+      <h2>Settings:</h2>
+      <div class="guessesNum">
+        <label for="noOfGuesses">Choose Number of guesses:</label>
+        <select name="noOfGuesses" class="noOfGuesses">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10" selected>10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+          <option value="13">13</option>
+          <option value="14">14</option>
+          <option value="15">15</option>
+        </select>
+      </div>
+      <div class="limit">
+        <!-- <label for="range"
+          >Choose the number of the lower limit to gusss:
+        </label>
+        <input
+          type="range"
+          name="range"
+          class="range"
+          min="1"
+          max="499"
+          step="1"
+          value="100"
+        />
+        <output>1</output>
+        <br /> -->
+        <label for="range"
+          >Choose the number of the upper limit to gusss:
+        </label>
+        <input
+          type="range"
+          name="range"
+          class="range"
+          min="2"
+          max="500"
+          step="1"
+          value="100"
+        />
+        <output>100</output>
+      </div>
+      <input
+        type="submit"
+        name="Save"
+        value="Save"
+        class="guessSubmit"
+        id="save"
+      />
+    </div>
+  </body>
+</html>
